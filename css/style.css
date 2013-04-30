@@ -1,0 +1,27 @@
+body { 
+    background-color: black; 
+    margin: 0;
+    padding: 20px; 
+    font-family: monospace;
+    color: green;
+}
+
+#hacker-interface-bg { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/bg.jpeg);
+    opacity: 0.4;
+}
+
+#hacker-interface-blur { 
+    position: absolute;
+    background-color: black;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.2;
+}
