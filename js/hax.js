@@ -4,7 +4,7 @@ var tracertEngage = 0;
 var message = "Welcome Stranger... ******* %%";
 message += "You have been granted permission to use the single most powerful hacker tool in the history %";
 message += "of hacker tools: ***** tracert (pronounced 'tracer-tee'). ***** With great power, comes great responsibility.%%*****";
-message += "When you are ready to invoke the powers of tracert, the it in the prompt below.%%";
+message += "When you are ready to invoke the powers of tracert, type it in the prompt below.%%";
 message += "haxor@hack-server:/ $  ";
 
 var tracert = "%%";
