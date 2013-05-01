@@ -28,7 +28,6 @@ function reddify() {
 function killInterval() {
     clearInterval(typeInterval);
     $("#content").append("<span id='command'></span>");
-    blinkCursor();
     $('body').bind('keydown', function(e) {
         e.preventDefault();
         var key = e.keyCode;

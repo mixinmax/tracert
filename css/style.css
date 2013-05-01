@@ -44,3 +44,16 @@ body {
     color: red;
     z-index: 1;
 }
+
+#credits {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    color: #aaa;
+    font-size: 12px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    z-index: 100;
+}
+
+a { color: #aaa; }
+a:visited { color: #aaa; }
