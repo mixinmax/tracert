@@ -4,7 +4,7 @@ var tracertEngage = 0;
 var message = "Welcome Stranger... ******* %%";
 message += "You have been granted permission to use the single most powerful hacker tool in the history %";
 message += "of hacker tools: ***** tracert (pronounced 'tracer-tee'). ***** With great power, comes great responsibility.%%*****";
-message += "When you are ready to invoke the powers of tracert, invoke the command in the prompt below.%%";
+message += "When you are ready to invoke the powers of tracert, the it in the prompt below.%%";
 message += "haxor@hack-server:/ $  ";
 
 var tracert = "%%";
@@ -15,9 +15,6 @@ tracert += "3   ********1   ****0   ****0       ****70.85.127.105   po51.dsr01.d
 tracert += "4   ****0   ****0   ****0       ****173.192.18.224  ae16.bbr01.eq01.dal03.networklayer.com **%";       
 tracert += "6   **0   **0   **0       *****72.21.81.85 **%%";
 tracert += "Hacking complete. You've successfully infiltrated the FBI servers. You hacker, you.";
-
-function blinkCursor() {
-}
 
 function reddify() {
     $("#hacker-interface-blur").animate({opacity: 0.2}, 50, function() {
