@@ -69,4 +69,4 @@ function typeLetter(msg, pos) {
     }
 }
 
-var typeInterval = setInterval(function() { typeLetter(message, typeCount) }, 30);
+var typeInterval = setInterval(function() { typeLetter(message, typeCount) }, 1);
