@@ -32,13 +32,13 @@ body {
     display: none;
     position: absolute;
     text-align: center;
-    width: 460px;
-    height: 230px;
-    margin-left: -230px;
-    margin-top: -115px;
+    width: 60%;
+    height: 20%;
+    margin-left: -30%;
+    margin-top: -20%;
     left: 50%;
     top: 70%;
-    font-size: 100px;
+    font-size: 1000%;
     font-weight: bold;
     font-family: sans-serif;
     color: red;
