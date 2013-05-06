@@ -27,27 +27,37 @@ function reddify() {
 
 function killInterval() {
     clearInterval(typeInterval);
-    $("#content").append("<span id='command'></span>");
-    $('body').bind('keydown', function(e) {
-        e.preventDefault();
-        var key = e.keyCode;
-        if (key == 13) { 
-            if ($("#command").text() == 'tracert') {
-                reddify();
-                var omgHax = setInterval(function() { reddify(); }, 500);
-                typeCount = 0; 
-                tracertEngage = 1;
-                var doTheT = setInterval(function() { typeLetter(tracert, typeCount); }, 30);
+    if (window.location.hash == '#auto') {
+        // Auto tracert
+        $("#command").text('tracert');
+        reddify();
+        var omgHax = setInterval(function() { reddify(); }, 500);
+        typeCount = 0; 
+        tracertEngage = 1;
+        var doTheT = setInterval(function() { typeLetter(tracert, typeCount); }, 30);
+    } else {
+        $("#content").append("<span id='command'></span>");
+        $('body').bind('keydown', function(e) {
+            e.preventDefault();
+            var key = e.keyCode;
+            if (key == 13) { 
+                if ($("#command").text() == 'tracert') {
+                    reddify();
+                    var omgHax = setInterval(function() { reddify(); }, 500);
+                    typeCount = 0; 
+                    tracertEngage = 1;
+                    var doTheT = setInterval(function() { typeLetter(tracert, typeCount); }, 30);
+                } else {
+                    console.log("aint no posts foo");
+                }
+            } else if (key == 8) { 
+                var contents = $("#command").text();
+                $("#command").text(contents.substring(0,(contents.length - 1)));
             } else {
-                console.log("aint no posts foo");
+                $("#command").append(String.fromCharCode(key).toLowerCase());
             }
-        } else if (key == 8) { 
-            var contents = $("#command").text();
-            $("#command").text(contents.substring(0,(contents.length - 1)));
-        } else {
-            $("#command").append(String.fromCharCode(key).toLowerCase());
-        }
-    });
+        });
+    }    
 }
 
 function typeLetter(msg, pos) {
