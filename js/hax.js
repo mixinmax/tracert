@@ -29,7 +29,7 @@ function killInterval() {
     clearInterval(typeInterval);
     if (window.location.hash == '#auto') {
         // Auto tracert
-        $("#command").text('tracert');
+        $("#content").append("<span id='command'>tracert</span>");
         reddify();
         var omgHax = setInterval(function() { reddify(); }, 500);
         typeCount = 0; 
