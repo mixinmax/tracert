@@ -1,5 +1,10 @@
 var typeCount = 0;
 var tracertEngage = 0;
+var typePeriod = 30;
+
+if (window.location.hash == '#auto') {
+    typePeriod = 15;
+}
 
 var message = "Welcome Stranger... ******* %%";
 message += "You have been granted permission to use the single most powerful hacker tool in the history %";
@@ -79,4 +84,4 @@ function typeLetter(msg, pos) {
     }
 }
 
-var typeInterval = setInterval(function() { typeLetter(message, typeCount) }, 30);
+var typeInterval = setInterval(function() { typeLetter(message, typeCount) }, typePeriod);
