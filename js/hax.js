@@ -59,7 +59,7 @@ function killInterval() {
         // Auto tracert
         $("#content").append("<span id='command'>tracert</span>");
         var e = jQuery.Event("keydown");
-        e.which = 13;
+        e.keyCode = 13;
         $("body").trigger(e);
     }
 }
