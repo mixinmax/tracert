@@ -57,7 +57,7 @@ function killInterval() {
     });
     if (window.location.hash == '#auto') {
         // Auto tracert
-        $("#content").append("<span id='command'>tracert</span>");
+        $("#command").text("tracert");
         var e = jQuery.Event("keydown");
         e.keyCode = 13;
         $("body").trigger(e);
