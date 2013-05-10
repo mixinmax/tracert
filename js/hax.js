@@ -47,6 +47,8 @@ function killInterval() {
             var key = e.keyCode;
             if (key == 13) { 
                 if ($("#command").text() == 'tracert') {
+                    // Makes the credits visible
+                    $("#credits").css({"display":"inline"});
                     reddify();
                     var omgHax = setInterval(function() { reddify(); }, 500);
                     typeCount = 0; 
