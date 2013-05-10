@@ -32,39 +32,36 @@ function reddify() {
 
 function killInterval() {
     clearInterval(typeInterval);
+    $("#content").append("<span id='command'></span>");
+    $('body').bind('keydown', function(e) {
+        e.preventDefault();
+        var key = e.keyCode;
+        if (key == 13) { 
+            if ($("#command").text() == 'tracert') {
+                // Makes the credits visible
+                $("#credits").css({"display":"inline"});
+                reddify();
+                var omgHax = setInterval(function() { reddify(); }, 500);
+                typeCount = 0; 
+                tracertEngage = 1;
+                var doTheT = setInterval(function() { typeLetter(tracert, typeCount); }, 30);
+            } else {
+                console.log("aint no posts foo");
+            }
+        } else if (key == 8) { 
+            var contents = $("#command").text();
+            $("#command").text(contents.substring(0,(contents.length - 1)));
+        } else {
+            $("#command").append(String.fromCharCode(key).toLowerCase());
+        }
+    });
     if (window.location.hash == '#auto') {
         // Auto tracert
         $("#content").append("<span id='command'>tracert</span>");
-        reddify();
-        var omgHax = setInterval(function() { reddify(); }, 500);
-        typeCount = 0; 
-        tracertEngage = 1;
-        var doTheT = setInterval(function() { typeLetter(tracert, typeCount); }, 30);
-    } else {
-        $("#content").append("<span id='command'></span>");
-        $('body').bind('keydown', function(e) {
-            e.preventDefault();
-            var key = e.keyCode;
-            if (key == 13) { 
-                if ($("#command").text() == 'tracert') {
-                    // Makes the credits visible
-                    $("#credits").css({"display":"inline"});
-                    reddify();
-                    var omgHax = setInterval(function() { reddify(); }, 500);
-                    typeCount = 0; 
-                    tracertEngage = 1;
-                    var doTheT = setInterval(function() { typeLetter(tracert, typeCount); }, 30);
-                } else {
-                    console.log("aint no posts foo");
-                }
-            } else if (key == 8) { 
-                var contents = $("#command").text();
-                $("#command").text(contents.substring(0,(contents.length - 1)));
-            } else {
-                $("#command").append(String.fromCharCode(key).toLowerCase());
-            }
-        });
-    }    
+        var e = jQuery.Event("keydown");
+        e.which = 13;
+        $("body").trigger(e);
+    }
 }
 
 function typeLetter(msg, pos) {
